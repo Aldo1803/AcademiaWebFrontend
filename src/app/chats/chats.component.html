@@ -1,0 +1,29 @@
+
+<div class="container " style="margin-bottom: 20px; margin-top: 20px;">
+
+
+    <div class="col-12">
+        <button type="button" class="btn btn-outline-primary" (click)="createChat()">Crear chat</button>
+    </div>
+
+</div>
+
+<div class="container " style="margin-top: 20px;">
+
+
+    
+    <div class="row">
+
+    
+    <div class="card col-3" *ngFor="let chat of chats">
+        <div class="card-body">
+            <h5 class="card-title">{{chat.createdAt}}</h5>
+            
+            <a class="btn btn-outline-success" [routerLink]="['/chats', chat._id]"> Ver chat</a>
+            <button type="button" class="btn btn-outline-danger" (click)="deleteChat(chat._id)">Eliminar chat</button>
+        </div>
+    </div>
+
+    </div>
+
+</div>
